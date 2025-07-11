@@ -62,7 +62,7 @@
 .cart-item-delete {
   background-color: #ff6961;
   border: none;
-  color: #fff;
+  color: #edecec;
   font-size: 14px;
   cursor: pointer;
   padding: 10px 15px;
@@ -162,7 +162,7 @@
   .cart-item-delete {
     background-color: #ff6961;
     border: none;
-    color: #fff;
+    color: #f1ebeb;
     font-size: 14px;
     cursor: pointer;
     padding: 10px 15px;
@@ -235,7 +235,7 @@
     border: none;
     border-radius: 5px;
     background-color: #4caf50;
-    color: white;
+    color: rgb(254, 251, 251);
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 40px;

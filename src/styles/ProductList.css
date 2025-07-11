@@ -13,7 +13,7 @@ body {
 /* Navbar */
 .navbar {
     background-color: #4CAF50;
-    color: #fff!important;
+    color: #faf9f9!important;
     padding: 15px;
     display: flex;
     justify-content: space-between;
@@ -33,7 +33,7 @@ body {
 }
 
 .navbar .ul div a {
-    color: white;
+    color: rgb(230, 229, 229);
     font-size: 30px;
     text-decoration: none;
    
@@ -115,7 +115,7 @@ body {
 .product-card::before {
     content: "SALE";
     background-color: #e74c3c;
-    color: #fff;
+    color: #000000;
     position: absolute;
     top: 0;
     right: 0;
@@ -200,7 +200,7 @@ body {
 .product-button {
     background-color: #4CAF50; /* Green */
     border: none;
-    color: white;
+    color: rgb(247, 236, 236);
     padding: 10px 20px;
     text-align: center;
     text-decoration: none;
