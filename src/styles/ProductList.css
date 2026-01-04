@@ -1,255 +1,232 @@
-/* Reset some default styles */
-body, h1, ul {
-    margin: 0;
-    padding: 0;
-}
+/* --- NAVBAR FIXES --- */
 
-/* Set a background color */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-}
-
-/* Navbar */
+/* 1. Force the Navbar Container to behave */
 .navbar {
-    background-color: #2747c8;
-    color: #faf9f9!important;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 20px;
+  background-color: #1A3C34 !important; /* Deep Forest Green */
+  height: 80px !important;
+  padding: 0 40px !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  border-bottom: 3px solid #D4AF37; /* Gold Accent Line */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.navbar .ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 1100px;
+/* 2. TAME THE GIANT LOGO */
+.luxury img {
+  width: 50px !important;  /* Stops the explosion */
+  height: 50px !important;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Turns the logo white */
+  margin-right: 15px;
 }
 
-.navbar li {
-    margin-right: 30px;
+/* 3. Style the Brand Name */
+.luxury {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.navbar .ul div a {
-    color: rgb(230, 229, 229);
-    font-size: 30px;
-    text-decoration: none;
-   
+.luxury a {
+  text-decoration: none !important;
 }
 
-/* Product Grid */
+.luxury h3 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.5rem !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  letter-spacing: 0.5px;
+  font-weight: normal;
+}
+
+.luxury i {
+  display: block;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.7rem !important;
+  color: #D4AF37 !important; /* Gold Slogan */
+  font-style: normal;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+/* 4. Fix the Right Side (Links & Cart) */
+/* This targets the inline style container for links */
+div[style*="width: 1100px"] {
+  width: auto !important;
+  gap: 30px;
+}
+
+.navbar a {
+  text-decoration: none !important;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 0.95rem !important;
+  color: #e0e0e0 !important;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #D4AF37 !important; /* Gold on hover */
+}
+
+/* Cart Icon Area */
+.cart svg {
+  width: 32px !important;
+  height: 32px !important;
+  stroke: #D4AF37 !important; /* Gold Cart Icon */
+  fill: none;
+}
+
+.cart text {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  fill: #ffffff !important; /* White number count */
+  transform: translateY(5px);
+}
+
+/* --- PRODUCT GRID (The "Ass" part) --- */
+
 .product-grid {
-    display:flex;
-    flex-direction: column;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
 }
+
+/* Clean Category Headings */
+.plantname_heading {
+  text-align: center;
+  border-bottom: none !important; /* Remove default line */
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.plant_heading {
+  font-family: Georgia, serif;
+  font-size: 2.2rem;
+  color: #1A3C34;
+  margin-bottom: 10px;
+}
+
+/* Add a gold underline decoration */
+.plantname_heading::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: #D4AF37;
+  margin: 10px auto 0;
+}
+
+/* Grid Layout */
 .product-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 50px;
-    /* background-color: pink; */
-    /* justify-content: space-between; */
-    padding: 20px;
-    width: 100%;
-    align-items: center;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 40px; /* Space between cards */
 }
 
-/* Product Card */
+/* --- CARD DESIGN --- */
 .product-card {
-    flex: 0 0 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap */
-    max-width: calc(26.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap */
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    text-align: center;
-    position: relative;
-    
-    gap: 20px;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Slight rounding */
+  overflow: hidden;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
 }
 
-/* Pseudo-classes - Hover effect on product button */
 .product-card:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1;
-}
-
-.product-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.product-price {
-    color: #e74c3c;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  transform: translateY(-8px); /* Float up effect */
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  border-color: #D4AF37; /* Gold border on hover */
 }
 
 .product-image {
-    max-width: 100%;
-    height: 200px; /* Adjust height for better consistency */
+  width: 100%;
+  height: 300px; /* Taller, elegant image area */
+  object-fit: cover;
+  border-bottom: 1px solid #f0f0f0;
 }
 
+.product-title {
+  font-family: Georgia, serif;
+  font-size: 1.3rem;
+  text-align: center;
+  color: #1A3C34;
+  margin: 20px 0 5px;
+}
+
+.product-description {
+  text-align: center;
+  color: #666;
+  font-size: 0.9rem;
+  padding: 0 20px;
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.product-cost {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #1A3C34;
+  margin-bottom: 20px;
+}
+
+/* Elegant Button */
 .product-button {
-    background-color: #e74c3c;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
-    margin-top: 10px;
+  background-color: #1A3C34;
+  color: white;
+  border: none;
+  padding: 15px 0;
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-
 
 .product-button:hover {
-    background-color: #c0392b;
+  background-color: #D4AF37;
+  color: #1A3C34;
 }
 
-/* Pseudo-elements - Sale badge */
-.product-card::before {
-    content: "SALE";
-    background-color: #e74c3c;
-    color: #000000;
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px;
-    border-radius: 0 0 0 5px;
-}
-.tag_home_link{
-    display: flex;
-    /* background-color: red; */
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50px;
-    color: white;
-    text-decoration: none;
-    font-size: 20px;
-}
-.tag_home_link h3{
-    font-size: 30px;
-}
-.tag a{
-    text-decoration: none;
-}
-.tag {
-    width: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.product-button.added-to-cart {
+  background-color: #e0e0e0;
+  color: #888;
+  cursor: not-allowed;
 }
 
-.tag img {
-    height: 70px;
-    width: 70px;
-    border-radius: 70%;
-    
-}
-
-.luxury {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 650px;
-    font-size: 19px;
-}
-.cart{
-    color: white;
-    display: flex;
-}
-.cart_quantity_count{
-    margin-top: 16px;
-    /* background-color: red; */
-    margin-left: 27px;
-    position: absolute;
-    font-size: 29px;
-
-}
-.plantname_heading{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-    /* background-color: yellow; */
-}
-.plant_heading{
-    width: 400px;
-    text-align: center;
-    margin: 20px;
-    border: 1px solid rgb(5, 4, 4);
-    border-left: none;
-    border-right: none;
-    
-
-}
-/* Add Media Query for responsiveness */
+/* Mobile Fixes */
 @media (max-width: 768px) {
-    .product-card {
-        flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on smaller screens */
-        max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on smaller screens */
-    }
-}
-/* ProductList.css */
+  .navbar {
+    height: auto !important;
+    padding: 15px !important;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .luxury {
+    margin-bottom: 10px;
+  }
 
-.product-button {
-    background-color: #41a715; /* Green */
-    border: none;
-    color: rgb(247, 236, 236);
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border-radius: 10px;
+  div[style*="width: 1100px"] {
+    flex-direction: column;
+    gap: 15px;
   }
-  
-  .product-button:hover {
-    background-color: #45a049;
-  }
-  
-  .product-button.added-to-cart {
-    background-color: grey; /* Grey when product is added */
-    cursor:not-allowed
-  }
-  @media (max-width: 1200px) {
-    .product-card {
-      flex: 1 1 calc(33.33% - 20px); /* Adjust width for 3 cards per row with 20px gap on medium screens */
-      max-width: calc(33.33% - 20px); /* Adjust max-width for 3 cards per row with 20px gap on medium screens */
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .product-card {
-      flex: 1 1 calc(50% - 20px); /* Adjust width for 2 cards per row with 20px gap on small screens */
-      max-width: calc(50% - 20px); /* Adjust max-width for 2 cards per row with 20px gap on small screens */
-    }
-    .navbar {
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        align-items: center; /* Align items to the center of the container */
-      }
-    
-      .tag {
-        margin-bottom: 20px; /* Add margin bottom for spacing */
-        text-align: center; /* Align text to the center */
-      }
-    
-      .ul {
-        display: flex; /* Set display to flex */
-        flex-direction: column; /* Change flex direction to stack items vertically */
-        gap: 10px; /* Add gap between items */
-      }
-    
-      .ul div {
-        text-align: center; /* Align text to the center */
-      }
-  }
+}
